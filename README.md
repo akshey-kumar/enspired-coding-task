@@ -15,7 +15,7 @@ After cloning the repository, navigate to the project directory:
 
 ```bash
 
-cd furniture-analyze
+cd enspired-coding-task
 
 ```
 
