@@ -22,7 +22,9 @@ class RowSegment:
     text: str
 
     def check_overlap(self, row_segment_2):
-        """Check if two row segments overlap along the horizontal axis."""
+        """
+        Check if two row segments overlap along the horizontal axis.
+        """
         return max(self.col_start, row_segment_2.col_start) < min(self.col_end, row_segment_2.col_end)
 
 
@@ -52,7 +54,9 @@ class Space:
     is_room: bool = False
 
     def analyze_space(self):
-        """Extract name and count furniture in the space."""
+        """
+        Extract name and count furnitures in the space.
+        """
         text = ''.join(s.text for s in self.segments)
         name_match = re.search(r'\(.*?\)', text)
 
@@ -81,7 +85,7 @@ def sort_rooms(rooms: List[Space]) -> List[Space]:
 
 def process_plan(plan):
     """
-    Parse the floor plan, identify spaces, and analyze them by counting furniture.
+    Process the floor plan, identify spaces, and analyze them by counting furniture.
 
     Parameters:
         plan (str): The floor plan represented as a string.
