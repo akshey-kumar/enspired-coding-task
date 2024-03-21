@@ -42,3 +42,12 @@ furniture-analyze rooms.txt
 This command will process the floor plan and print the analysis results to the console.
 
 ### Working
+The algorithm reads in the text ile as a string. Wall components are identified as `-|+/\`.  It iterates over each row in the ascii string and identifies all non-wall components. These are saved as row-segments (for which a data class RowSegment is made). The RowSegment object contains the following information: row number, start and end coloumn of the non-wall region. 
+
+As it iterates over row segments, it compares the current row segment with previous and checks if there is any overalp. If there is then it adds both row segments objects to a Space. A Space is another dataclass we created that stores several RowSegments that are not separated by walls. In this way we slowly build up a Space (which is a precursor to a room). 
+
+Once there are no more overlapping row segments to be added (because it is blocked by wall components), we declare a Space object to be complete. We stop adding to that space. If there are more non-wall components encountered while iterating through the rows, we create a new Space object and add to this. 
+
+Once we have finished iterating to all rows, we have some number of Space objects. We check whether it is a room depending on if it has text of the form `(<room name>)`. If it does the name attrirbute of the space object is assigned this name.
+
+Finally, once all rooms are completely names, we idtenfiy furnitre, count them and then count the total furniture in the floor plan.
