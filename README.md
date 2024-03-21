@@ -6,7 +6,7 @@ Furniture Analyze is a Command Line Tool made in Python that allows you to analy
 ## Installation
 ### Prerequisites
 
-    Python 3.x installed on your system.
+Python 3.x installed on your system.
 
 
 ### Setup
