@@ -2,7 +2,7 @@
 
 ## Furniture Analyze
 
-Furniture Analyze is a Python package that allows you to analyze floor plans represented as text files to identify rooms and count furniture types within those the rooms.
+Furniture Analyze is a Command Line Tool made in Python that allows you to analyze floor plans represented as text files to identify rooms and count furniture of different types within those rooms.
 ## Installation
 ### Prerequisites
 
